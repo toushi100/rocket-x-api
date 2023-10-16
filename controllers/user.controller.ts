@@ -1,6 +1,6 @@
-import { User } from "../models/user";
+import { User } from "../models/user.model";
 import { Request, Response } from "express"
-import { AuthenticatedRequest } from "../middleware/auth";
+import { AuthenticatedRequest } from "../middleware/auth.middleware";
 
 
 export async function update(req: AuthenticatedRequest, res: Response) {

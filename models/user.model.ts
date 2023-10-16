@@ -1,5 +1,5 @@
 import mongoose, { Model, Schema, Document } from "mongoose";
-import {sendEmail} from "../services/verifyEmail";
+import {sendEmail} from "../services/verifyEmail.service";
 import bcrypt from 'bcrypt';
 import { send } from "process";
 require('dotenv').config();
