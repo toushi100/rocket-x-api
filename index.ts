@@ -1,6 +1,7 @@
 import express, { Express } from 'express';
 import authRouter from './routes/auth.routes';
 import userRouter from './routes/user.routes';
+import postRouter from './routes/post.routes';
 import { authenticate } from './middleware/auth.middleware';
 import { db_connection } from './db'
 import cors from 'cors';
@@ -23,7 +24,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(authenticate)
-app.use('/api', authRouter,userRouter);
+app.use('/api', authRouter,userRouter,postRouter);
 app.listen(port, () => {
   db_connection();
   console.log(`Server is running on port ${port}`);

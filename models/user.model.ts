@@ -7,7 +7,7 @@ const saltRounds = parseInt(process.env.SALTROUNDS)
 export interface IUser extends Document {
   email: string;
   fullName: string;
-  organizationName: string;
+  organizationName?: string;
   is_verified?: boolean;
   password?: string;
   token?: string;
@@ -28,10 +28,7 @@ const userSchema = new Schema
       required: false,
       type: String,
     },
-    organizationName: {
-      required: true,
-      type: String
-    },
+ 
     is_verified:{
       required:true,
       type:Boolean,
@@ -60,4 +57,4 @@ userSchema.post('save', async function (doc, next) {
   
 }
 )
-export const User: Model<IUser> = mongoose.model('User', userSchema);
+export  const User: Model<IUser> = mongoose.model('User', userSchema);
