@@ -1,4 +1,4 @@
-import { register,login,currentUser ,deleteme,resendVerificationEmail, verifyEmail} from '../controllers/auth'
+import { register,login,currentUser ,deleteme,resendVerificationEmail, verifyEmail} from '../controllers/auth.controller'
 import express from 'express'
 
 const authRouter = express.Router()

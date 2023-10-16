@@ -2,8 +2,8 @@
 import passport from 'passport';
 import { Strategy as BearerStrategy } from 'passport-http-bearer';
 import { NextFunction, Request, Response } from 'express';
-import { User } from "../models/user";
-import type { IUser } from "../models/user";
+import { User } from "../models/user.model";
+import type { IUser } from "../models/user.model";
 import jwt from 'jsonwebtoken';
 const jwtSecretKey = process.env.JWT_SECRET_KEY;
 

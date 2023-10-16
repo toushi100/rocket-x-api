@@ -1,11 +1,11 @@
 
 
-import { sendEmail } from "../services/verifyEmail";
+import { sendEmail } from "../services/verifyEmail.service";
 import jwt from 'jsonwebtoken';
-import { User } from "../models/user";
+import { User } from "../models/user.model";
 import bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
-import type { AuthenticatedRequest } from '../middleware/auth'
+import type { AuthenticatedRequest } from '../middleware/auth.middleware'
 
 require('dotenv').config();
 const saltRounds = parseInt(process.env.BCRYPT_SALTROUNDS)

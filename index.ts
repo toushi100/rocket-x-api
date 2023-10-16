@@ -1,7 +1,7 @@
 import express, { Express } from 'express';
-import authRouter from './routes/auth';
-import userRouter from './routes/user';
-import { authenticate } from './middleware/auth';
+import authRouter from './routes/auth.routes';
+import userRouter from './routes/user.routes';
+import { authenticate } from './middleware/auth.middleware';
 import { db_connection } from './db'
 import cors from 'cors';
 import morgan from 'morgan';

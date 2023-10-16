@@ -1,4 +1,4 @@
-import { update } from "../controllers/user"
+import { update } from "../controllers/user.controller"
 import express from 'express'
 
 const userRouter = express.Router()
