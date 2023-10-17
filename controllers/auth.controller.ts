@@ -77,7 +77,11 @@ export async function resendVerificationEmail(req: AuthenticatedRequest, res: Re
     expiresIn: tokenLife
   });
   const user = await User.findOneAndUpdate({ email: email }, { token: passwordToken }, { new: true })
-
+  if(!user){
+    res.json({
+      message: "User Does not Exist"
+    })
+  }
   const emailInfo = {
     email: user.email,
     subject: ' re send Verify Email',
